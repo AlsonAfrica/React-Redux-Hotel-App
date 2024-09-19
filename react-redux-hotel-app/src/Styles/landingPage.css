@@ -1,0 +1,107 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.banner {
+    position: relative; /* Required for the pseudo-element to position itself relative to .banner */
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Apply a fallback background color */
+}
+
+.banner::before {
+    content: ""; /* This is necessary for the ::before pseudo-element to appear */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; /* Ensures the background image stays behind any content inside .banner */
+    opacity: 0.8; /* Optional: Adjust opacity if you want a dim effect */
+}
+
+.Panel-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+    margin-top: 100px;
+    color:white;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.text h1{
+    font-size: 3rem;
+}
+.text p{
+    font-size: 1.5rem;
+}
+.search-bar-landing{
+    display: flex;
+    align-items: center;
+}
+.navbar-landing{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+.navbar-landing input{
+    width:40%;
+    height:50px;
+}
+.navbar-landing button{
+    height:50px;
+    width: 10%;
+}
+.room-cards{
+    margin-top: 40px;
+    text-align: center;
+}
+.room-cards h1{
+   padding-bottom: 50px;
+}
+.facilities{
+    margin-top: 100px;
+}
+.facilities h1{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.about{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+    height:400px;
+    /* background-color: black; */
+    padding:10px;
+    gap:10px;
+}
+.picture{
+    width:50%;
+    height: 100%;
+    background-color: beige;
+    border-radius: 10px;
+    background-image: url('../assets/image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text-about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height:100%;
+    background-color: beige;
+    border-radius: 10px;
+    text-align: center;
+    padding:10px;
+}
