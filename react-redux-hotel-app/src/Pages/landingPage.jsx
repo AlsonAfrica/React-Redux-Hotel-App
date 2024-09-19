@@ -2,7 +2,6 @@ import CardFacilities from "../Components/facilitiescards";
 import Navbar from "../Components/navBar";
 import CardCollection from "../Components/roomcard";
 import image from "../assets/image.png"
-
 import "../Styles/landingPage.css"
 import HeroImage from "../assets/banner.jpg"
 import MapComponent from "../Components/map";
@@ -30,7 +29,6 @@ const LandingPage = () => {
         </div>
         <div className="about">
             <div className="picture">
-
             </div>
             <div className="text-about">
             <h1>About Us</h1>

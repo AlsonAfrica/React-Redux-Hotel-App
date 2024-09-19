@@ -4,14 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import LandingPage from './Pages/landingPage'
 import Panel from './Components/Panel'
+import Policies from './Pages/Policies'
 
 
 function App() {
 
   return (
     <>
-    <LandingPage/>
-    {/* <Panel/> */}
+    {/* <LandingPage/> */}
+    <Policies/>
     </>
   )
 }
