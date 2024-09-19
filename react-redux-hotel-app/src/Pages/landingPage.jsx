@@ -85,6 +85,11 @@ const LandingPage = () => {
       <li><a href="/contact">Contact</a></li>
     </ul>
   </div>
+  
+  <button className="back-to-top" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+    Back to Top
+  </button>
+  
 </div>  
      </div>
     );

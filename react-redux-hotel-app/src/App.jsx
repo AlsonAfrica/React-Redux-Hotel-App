@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
-    {/* <LandingPage/> */}
-    <Policies/>
+    <LandingPage/>
+    {/* <Policies/> */}
     </>
   )
 }

@@ -26,20 +26,19 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { label: 'Rooms', color: '#FF6347' },          // Tomato
-    { label: 'Facilities', color: '#1E90FF' },     // Dodger Blue
-    { label: 'Gallery', color: '#32CD32' },        // Lime Green
-    { label: 'About', color: '#FFD700' },          // Gold
-    { label: 'Explore Rooms', color: '#FF69B4' }   // Hot Pink
+    { label: 'Rooms', color: '#FF6347' },          
+    { label: 'Facilities', color: '#1E90FF' },     
+    { label: 'Gallery', color: '#32CD32' },     
+    { label: 'Policies', color: '#FFD700' },          
+    { label: 'Explore Rooms', color: '#FF69B4' }   
   ];
 
   return (
     <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <img src="/path-to-logo.png" alt="Logo" style={{ height: '40px' }} />
+          <img src="/logo.png" alt="Logo" style={{ height: '40px' }} />
         </Typography>
-
         {isMobile ? (
           <>
             <IconButton
