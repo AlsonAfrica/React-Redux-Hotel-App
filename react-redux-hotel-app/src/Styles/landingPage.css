@@ -116,3 +116,57 @@
 .map{
     padding: 10px;
 }
+/*  */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+  }
+  
+  .footer-section {
+    flex: 1 1 20%;
+    margin: 10px;
+  }
+  
+  .footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section p, .footer-section ul {
+    font-size: 1em;
+    margin: 5px 0;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ff6347;
+  }
+  
+  .social-icons a {
+    margin-right: 10px;
+    color: white;
+    font-size: 1.5em;
+  }
+  
+  .social-icons a:hover {
+    color: #ff6347;
+  }
+  
+  .map {
+    flex: 2 1 40%;
+    margin-right: 20px;
+  }
+  
