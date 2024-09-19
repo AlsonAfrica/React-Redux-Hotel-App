@@ -2,7 +2,7 @@ import React from "react";
 
 const MapComponent = () => {
   return (
-    <div style={{ width: '350px', height: '260px' }}>
+    <div style={{ width: '370px', height: '270px' }}>
       <iframe
         title="Google Maps"
         width="100%"

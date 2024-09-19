@@ -105,3 +105,14 @@
     text-align: center;
     padding:10px;
 }
+.footer{
+    margin-top: 150px;
+    height:300%;
+    width:100%;
+    background-color: black;
+    display:flex;
+    color:white;
+}
+.map{
+    padding: 10px;
+}

@@ -5,6 +5,7 @@ import image from "../assets/image.png"
 
 import "../Styles/landingPage.css"
 import HeroImage from "../assets/banner.jpg"
+import MapComponent from "../Components/map";
 const LandingPage = () => {
     return (
      <div className="wrapper-landing">
@@ -41,7 +42,14 @@ const LandingPage = () => {
                     </p>
             </div>
         </div>
-        
+        <div className="footer">
+               <div className="map">
+                  <MapComponent/>
+               </div>
+               <div><h1>Our Location</h1>
+               <h2>We are Located in </h2>
+               </div>
+        </div>
      
      </div>
     );
