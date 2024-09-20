@@ -5,9 +5,10 @@ import image from "../assets/image.png"
 import "../Styles/landingPage.css"
 import HeroImage from "../assets/banner.jpg"
 import MapComponent from "../Components/map";
+import { Link } from 'react-router-dom';
 const LandingPage = () => {
     return (
-     <div className="wrapper-landing">
+      <div className="wrapper-landing">
         <div className="banner">
            <Navbar/> 
           <div className="text">
@@ -40,58 +41,58 @@ const LandingPage = () => {
                     </p>
             </div>
         </div>
-        <div className="footer">
-  <div className="footer-section map">
-    <MapComponent />
-  </div>
+          <div className="footer">
+            <div className="footer-section map">
+              <MapComponent />
+            </div>
 
-  <div className="footer-section">
-    <h1>Our Location</h1>
-    <p>1234 Fortune Street, King's Avenue, City, Country</p>
-    <p><strong>Open Hours:</strong> Monday - Sunday, 8 AM - 10 PM</p>
-  </div>
+            <div className="footer-section">
+              <h1>Our Location</h1>
+              <p>1234 Fortune Street, King's Avenue, City, Country</p>
+              <p><strong>Open Hours:</strong> Monday - Sunday, 8 AM - 10 PM</p>
+            </div>
 
-  <div className="footer-section">
-    <h1>Contact Us</h1>
-    <p><strong>Phone:</strong> +123-456-7890</p>
-    <p><strong>Email:</strong> contact@kingsfortunehotel.com</p>
-  </div>
+            <div className="footer-section">
+              <h1>Contact Us</h1>
+              <p><strong>Phone:</strong> +123-456-7890</p>
+              <p><strong>Email:</strong> contact@kingsfortunehotel.com</p>
+            </div>
 
-  <div className="footer-section">
-    <h1>Follow Us</h1>
-    <div className="social-icons">
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-        <i className="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-        <i className="fab fa-twitter"></i>
-      </a>
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-        <i className="fab fa-instagram"></i>
-      </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-        <i className="fab fa-linkedin-in"></i>
-      </a>
-    </div>
-  </div>
+            <div className="footer-section">
+              <h1>Follow Us</h1>
+              <div className="social-icons">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
 
-  <div className="footer-section">
-    <h1>Quick Links</h1>
-    <ul>
-      <li><a href="/rooms">Rooms</a></li>
-      <li><a href="/facilities">Facilities</a></li>
-      <li><a href="/gallery">Gallery</a></li>
-      <li><a href="/about">About Us</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </div>
-  
-  <button className="back-to-top" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-    Back to Top
-  </button>
-  
-</div>  
-     </div>
+            <div className="footer-section">
+              <h1>Quick Links</h1>
+              <ul>
+                <li><a href="/rooms">Rooms</a></li>
+                <li><a href="/facilities">Facilities</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div>
+            
+            <button className="back-to-top" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+              Back to Top
+            </button>
+            
+          </div>  
+      </div>
     );
 }
  
