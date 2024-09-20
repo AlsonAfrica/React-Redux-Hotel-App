@@ -11,6 +11,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const location = useLocation();
@@ -40,10 +41,11 @@ const Navbar = () => {
   const menuItems = [
     { label: 'Rooms', color: '#FF6347', routes: ['/',], route: '/' },
     { label: 'Facilities', color: '#1E90FF', routes: ['/',], route: '/' },
-    { label: 'Gallery', color: '#32CD32', routes: ['/', '/Policies', '/Gallery'], route: '/Gallery' },
+    { label: 'Gallery', color: '#32CD32', routes: ['/', '/Policies', '/Gallery',], route: '/Gallery' },
     { label: 'Home', color: '#FF69B4', routes: ['/Gallery', '/Policies'], route: '/' },
     { label: 'Policies', color: '#FFD700', routes: ['/', '/Gallery', '/Policies'], route: '/Policies' },
     { label: 'Explore Rooms', color: '#FF69B4', routes: ['/', '/Gallery', '/Policies'], route: '/authetication' },
+    { label: <><FaRegUserCircle /></>, color: '#FF69B4', routes: ['/HomePage'], route: '/profile' } // Added routes here
   ];
 
   // Define pages where the Navbar should NOT be displayed

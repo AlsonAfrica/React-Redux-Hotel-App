@@ -8,6 +8,7 @@ import Policies from './Pages/Policies'
 import Gallery from './Pages/gallery'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Authentication from './Pages/authenticationPage'
+import HomePage from './Pages/homePage'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Policies" element={<Policies/>}/>
         <Route path="/Gallery" element={<Gallery/>}/>
         <Route path="/authetication" element={<Authentication/>}/>
+        <Route path="/HomePage" element={<HomePage/>}/>
       </Routes>
     </Router>
     </>
