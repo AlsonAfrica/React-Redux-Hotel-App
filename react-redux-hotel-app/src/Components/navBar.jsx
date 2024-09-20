@@ -43,7 +43,7 @@ const Navbar = () => {
     { label: 'Gallery', color: '#32CD32', routes: ['/', '/Policies', '/Gallery'], route: '/Gallery' },
     { label: 'Home', color: '#FF69B4', routes: ['/Gallery', '/Policies'], route: '/' },
     { label: 'Policies', color: '#FFD700', routes: ['/', '/Gallery', '/Policies'], route: '/Policies' },
-    { label: 'Explore Rooms', color: '#FF69B4', routes: ['/', '/Gallery', '/Policies'], route: '/' },
+    { label: 'Explore Rooms', color: '#FF69B4', routes: ['/', '/Gallery', '/Policies'], route: '/authetication' },
   ];
 
   // Define pages where the Navbar should NOT be displayed

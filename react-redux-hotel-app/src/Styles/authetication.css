@@ -1,0 +1,64 @@
+.authetication-wrapper{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+}
+.auth-picture {
+    width: 50%;
+    height: 100%;
+    background-color: antiquewhite;
+    background-image: url("../assets/left-bg.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; /* Required for the absolute positioning of ::before */
+}
+
+.auth-picture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.3); Example: semi-transparent overlay */
+    z-index: 1; /* Ensure the ::before element appears behind any child elements */
+    pointer-events: none; /* Allow clicks to pass through the pseudo-element */
+}
+
+.left-picture{
+    width:90%;
+    height:90%;
+    background-color: blue;
+    background-image: url("../assets/admin.jpg"); 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+.auth-form{
+    width:50%;
+    height:100%;
+    background-color: coral;
+    background-image: url("../assets/right-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    width:90%;
+    height:90%;
+    background-color: rgba(201, 199, 199, 0.664);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
