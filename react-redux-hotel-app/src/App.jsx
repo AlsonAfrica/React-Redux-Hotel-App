@@ -9,10 +9,20 @@ import Gallery from './Pages/gallery'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Authentication from './Pages/authenticationPage'
 import HomePage from './Pages/homePage'
+import { useSelector } from 'react-redux'
+import ProfilePopup from './Components/profilePopup'
+import BookingsPopup from './Components/bookingsPopup'
+import FavouritesPopup from './Components/favouritesPopup'
+import MessagesPopup from './Components/messagesPopup'
+import ReviewPopup from './Redux/reviewPopup'
+import ReviewsPopup from './Components/reviewsPopup'
+
+
+
+
 
 
 function App() {
-
   return (
     <>
     <Router>
@@ -24,6 +34,11 @@ function App() {
         <Route path="/HomePage" element={<HomePage/>}/>
       </Routes>
     </Router>
+    <ProfilePopup/>
+    <BookingsPopup/>
+    <FavouritesPopup/>
+    <MessagesPopup/>
+    <ReviewsPopup/>
     </>
   )
 }

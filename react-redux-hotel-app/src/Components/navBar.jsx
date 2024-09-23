@@ -12,12 +12,16 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaRegUserCircle } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { openDrawer } from '../Redux/drawerSlice';
+import DrawerComponent from './drawer';
 
 const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const dispatch = useDispatch(); // Use dispatch to open the drawer
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -45,7 +49,13 @@ const Navbar = () => {
     { label: 'Home', color: '#FF69B4', routes: ['/Gallery', '/Policies'], route: '/' },
     { label: 'Policies', color: '#FFD700', routes: ['/', '/Gallery', '/Policies'], route: '/Policies' },
     { label: 'Explore Rooms', color: '#FF69B4', routes: ['/', '/Gallery', '/Policies'], route: '/authetication' },
-    { label: <><FaRegUserCircle /></>, color: '#FF69B4', routes: ['/HomePage'], route: '/profile' } // Added routes here
+    { 
+      label: <><FaRegUserCircle /></>, 
+      color: '#FF69B4', 
+      routes: ['/HomePage'], 
+      // route: '/profile', 
+      onClick: () => dispatch(openDrawer())  // Dispatch openDrawer when clicked
+    } 
   ];
 
   // Define pages where the Navbar should NOT be displayed
@@ -96,7 +106,7 @@ const Navbar = () => {
               .map((item, index) => (
                 <Button
                   key={index}
-                  onClick={() => handleNavigate(item.route)}
+                  onClick={item.onClick ? item.onClick : () => handleNavigate(item.route)} // Add onClick handler for last item
                   sx={{ color: item.color, border: `1px solid ${item.color}`, '&:hover': { backgroundColor: item.color, color: '#fff' } }}
                 >
                   {item.label}
@@ -105,6 +115,7 @@ const Navbar = () => {
           </Box>
         )}
       </Toolbar>
+      <DrawerComponent/>
     </AppBar>
   );
 };
