@@ -1,6 +1,12 @@
+// components/LoginForm.js
 import React, { useState } from 'react';
 import { Box, Button, TextField, Typography, Checkbox, FormControlLabel, IconButton, InputAdornment } from '@mui/material';
-import { Google as GoogleIcon, Visibility, VisibilityOff } from '@mui/icons-material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUser, loginUser } from '../Redux/autheticationSlice';// Adjust the path as necessary
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { setUserInfo } from '../Redux/user.Slice';
+
 
 const LoginForm = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -11,9 +17,46 @@ const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); // Initialize navigate
+  const { loading, error, user } = useSelector((state) => state.auth); // Adjust based on your Redux setup
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+    if (isSignUp) {
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+      if (!termsAccepted) {
+        alert('You must accept the terms and conditions!');
+        return;
+      }
+      // Dispatch registerUser action
+      dispatch(registerUser({ email, password })).then((action) => {
+        if (registerUser.fulfilled.match(action)) {
+          // Switch to login view after successful registration
+          const user = action.payload;
+          dispatch(setUserInfo({email:user.email, uid:user.uid}))
+          
+          setIsSignUp(false);
+          setEmail('');
+          setPassword('');
+          setConfirmPassword('');
+          setTermsAccepted(false);
+        }
+      });
+    } else {
+      // Dispatch loginUser action
+      dispatch(loginUser({ email, password })).then((action) => {
+        if (loginUser.fulfilled.match(action)) {
+          // Redirect to /HomePage on successful login
+          const user = action.payload;
+          dispatch(setUserInfo({email: user.email, uid:user.uid}))
+          navigate('/HomePage');
+        }
+      });
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -48,9 +91,6 @@ const LoginForm = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          InputProps={{
-            sx: { height: '40px' }, // Adjust height
-          }}
         />
         <TextField
           fullWidth
@@ -62,7 +102,6 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
           InputProps={{
-            sx: { height: '40px' }, // Adjust height
             endAdornment: (
               <InputAdornment position="end">
                 <IconButton onClick={togglePasswordVisibility} edge="end">
@@ -83,7 +122,6 @@ const LoginForm = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
             InputProps={{
-              sx: { height: '40px' }, // Adjust height
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton onClick={toggleConfirmPasswordVisibility} edge="end">
@@ -95,6 +133,7 @@ const LoginForm = () => {
           />
         )}
         {isSignUp && (
+          <Button>
           <FormControlLabel
             control={
               <Checkbox
@@ -104,34 +143,30 @@ const LoginForm = () => {
             }
             label="I accept the Terms and Conditions"
           />
+          </Button>
         )}
         <Button
           fullWidth
           variant="contained"
           color="primary"
           type="submit"
-          disabled={isSignUp && !termsAccepted}
+          disabled={loading || (isSignUp && !termsAccepted)}
         >
           {isSignUp ? 'Sign Up' : 'Login'}
         </Button>
       </form>
+      {error && <Typography color="error">{error}</Typography>}
+      {user && <Typography color="success">Registered as {user.email}</Typography>}
+
       <Button
         fullWidth
         variant="outlined"
         color="secondary"
-        startIcon={<GoogleIcon />}
         sx={{ marginTop: '10px' }}
+        onClick={() => setIsSignUp(!isSignUp)}
       >
-        Sign in with Google
+        {isSignUp ? 'Already have an account? Login' : 'Don’t have an account? Sign Up'}
       </Button>
-      <Typography align="center" sx={{ marginTop: '10px' }}>
-        <Button onClick={() => setIsSignUp(!isSignUp)}>
-          {isSignUp ? 'Already have an account? Login' : 'Don’t have an account? Sign Up'}
-        </Button>
-      </Typography>
-      <Typography align="center" sx={{ marginTop: '10px' }}>
-        <Button onClick={() => alert('Forgot password?')}>Forgot Password?</Button>
-      </Typography>
     </Box>
   );
 };

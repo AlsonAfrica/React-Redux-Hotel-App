@@ -5,6 +5,8 @@ import favouritePopup from "./favouritePopup";
 import messagePopup from "./messagePopup";
 import reviewPopup from "./reviewPopup";
 import bookingPopup from "./bookingPopup";
+import autheticationSlice from "./autheticationSlice";
+import userSlice from "./user.Slice";
 
 
 export const store = configureStore({
@@ -14,7 +16,9 @@ export const store = configureStore({
         favorites: favouritePopup,
         messages: messagePopup,
         reviews: reviewPopup,
-        bookings: bookingPopup
+        bookings: bookingPopup,
+        auth: autheticationSlice,
+        user:userSlice
     },
 })
 
