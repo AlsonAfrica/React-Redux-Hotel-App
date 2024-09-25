@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
 import "../Styles/homePage.css"
 import "../Styles/landingPage.css"
 import Navbar from "../Components/navBar";
-import RoomList from '../Components/roomlist';
+import RoomList from "../Components/rooms";
+
 const HomePage = () => {
     return (
     <div className="home-wrapper">
@@ -17,7 +17,7 @@ const HomePage = () => {
           <h1>View Our Rooms</h1>
         </div>
         <div className="room-lists">
-        
+       <RoomList/>
         </div>
     </div>);
 }

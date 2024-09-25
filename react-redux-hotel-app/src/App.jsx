@@ -16,10 +16,7 @@ import FavouritesPopup from './Components/favouritesPopup'
 import MessagesPopup from './Components/messagesPopup'
 import ReviewPopup from './Redux/reviewPopup'
 import ReviewsPopup from './Components/reviewsPopup'
-
-
-
-
+import RoomDetailsPopup from './Components/roomDetailsPopup'
 
 
 function App() {
@@ -39,6 +36,8 @@ function App() {
     <FavouritesPopup/>
     <MessagesPopup/>
     <ReviewsPopup/>
+    <RoomDetailsPopup/>
+    
     </>
   )
 }
