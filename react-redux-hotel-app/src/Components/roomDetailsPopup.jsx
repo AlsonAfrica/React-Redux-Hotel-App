@@ -2,10 +2,16 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { closeRoomDetails } from '../Redux/roomdetails.Slice';
 import "../Styles/roomPopup.css"
+import { useNavigate } from 'react-router-dom';
 
 const RoomDetailsPopup = () => {
   const dispatch = useDispatch();
   const { selectedRoom, isOpen } = useSelector((state) => state.roomdetails);
+  const navigate = useNavigate();
+  const Handlepayment = () =>{
+    navigate("/Payment")
+    dispatch(closeRoomDetails());
+  }
   // const {price} = selectedRoom;
 
   if (!isOpen || !selectedRoom) return null;
@@ -51,17 +57,17 @@ const RoomDetailsPopup = () => {
                         <form>
                               <label for="cars">Personale</label>
                               <select name="cars" id="cars">
-                                <option value="volvo"></option>
-                                <option value="saab">1</option>
-                                <option value="opel">2</option>
-                                <option value="audi">3</option>
-                                <option value="audi">4</option>
-                                <option value="audi">5</option>
-                                <option value="audi">6</option>
-                                <option value="audi">7</option>
-                                <option value="audi">8</option>
-                                <option value="audi">9</option>
-                                <option value="audi">10</option>
+                                <option value="1"></option>
+                                <option value="2">1</option>
+                                <option value="3">2</option>
+                                <option value="4">3</option>
+                                <option value="5">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
                               </select>
                         </form>
                       </div>
@@ -80,7 +86,9 @@ const RoomDetailsPopup = () => {
                         </div>
                         <div className="reservation-infor"></div>
                       </div>
-                      <div><button>RESERVE YOUR ROOM </button></div>
+                     
+                      <div><button onClick={Handlepayment}>RESERVE YOUR ROOM </button></div>
+                     
                     </div>
                 </div>
           </div>
