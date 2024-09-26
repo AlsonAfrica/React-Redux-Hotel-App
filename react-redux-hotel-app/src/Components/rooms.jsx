@@ -19,8 +19,15 @@ const RoomList = () => {
       roomType: 'Deluxe Suite',
       availability: true,
       maxOccupancy: 4,
+      price: 2000
     },
     {
+      imageUrl:room,
+      additionalImages: [
+         room,
+         room,
+         room
+      ],
       imageUrl: room,
       amenities: ['Wi-Fi', 'Air Conditioning', 'Flat Screen TV', 'Private Bathroom'],
       starRating: 5,
@@ -29,6 +36,12 @@ const RoomList = () => {
       maxOccupancy: 2,
     },
     {
+      imageUrl:room,
+      additionalImages: [
+         room,
+         room,
+         room
+      ],
       imageUrl: room,
       amenities: ['Wi-Fi', 'Mini Bar', 'Room Service'],
       starRating: 3,
@@ -37,6 +50,12 @@ const RoomList = () => {
       maxOccupancy: 3,
     },
     {
+      imageUrl:room,
+      additionalImages: [
+         room,
+         room,
+         room
+      ],
         imageUrl: room,
         amenities: ['Wi-Fi', 'Mini Bar', 'Room Service'],
         starRating: 3,
@@ -45,6 +64,12 @@ const RoomList = () => {
         maxOccupancy: 3,
       },
       {
+        imageUrl:room,
+        additionalImages: [
+           room,
+           room,
+           room
+        ],
       imageUrl: room,
       amenities: ['Wi-Fi', 'Mini Bar', 'Room Service'],
       starRating: 3,
